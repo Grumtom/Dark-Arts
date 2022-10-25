@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/Orb 2/Orb 2.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -157,18 +158,36 @@ namespace Orb_2.Scripts_2
             reload--; // ticks down the reload and fire timers
             firetimer--;
         
-            if (firetimer < 1)
-            {
-                isFiring = false; // if any active fire timer goes below zero then firing is set to false
-            }
+            if (firetimer < 1)isFiring = false; // if any active fire timer goes below zero then firing is set to false}
         
             if (Input.GetMouseButtonDown(1) && reload < 1 && spellStack.Length > 0)
             {
                 reload = 300; // timer until spell can be cast again
                 
-                
-                // w = earth, a = air, s = fire, d = lazer
-                switch (spellStack[0])
+                for (int I = 0; I <= combos.Length; I++)
+                {
+                 if(spellStack == combos[I]){doFunkySpell();}
+                }
+                { generateSpell(); }
+            }
+        }
+
+        public void damage(float damage)
+        {
+            health -= damage; // takes damage
+            if(health<=0){ SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);} // restarts if health < 0
+            health = Mathf.Clamp(health, 0, 100f); // clamps health
+            healthbar.fillAmount = health/100; // changes healthbar size
+        }
+
+        void doFunkySpell()
+        {
+            spellStack = ""; // resets stack on casting
+        }
+        void generateSpell()
+        {
+            // w = earth, a = air, s = fire, d = lazer
+            switch (spellStack[0])
                 {
                     case 'w':
                         for (int I = 0; I < stackSize; I++)
@@ -311,16 +330,7 @@ namespace Orb_2.Scripts_2
 
                 break;
                 }
-                spellStack = ""; // resets stack on casting
-            }
-        }
-
-        public void damage(float damage)
-        {
-            health -= damage; // takes damage
-            if(health<=0){ SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);} // restarts if health < 0
-            health = Mathf.Clamp(health, 0, 100f); // clamps health
-            healthbar.fillAmount = health/100; // changes healthbar size
+            spellStack = ""; // resets stack on casting
         }
     }
 }

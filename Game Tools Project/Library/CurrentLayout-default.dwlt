@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 709, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 24267
+  controlID: 111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 231, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 23914
+  controlID: 19
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,8 +168,8 @@ MonoBehaviour:
     y: 0
     width: 416
     height: 460
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 23960
+  controlID: 59
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -427,9 +427,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fe7f0b00
+      m_SelectedIDs: 2c080000720a0000500e000016100000d8060000
       m_LastClickedID: 0
-      m_ExpandedIDs: 50fbffffcc4800006c4b0000a4510000
+      m_ExpandedIDs: 50fbffffcc480000a4510000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -577,22 +577,22 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Orb 2/Prefabs/Attack bits
+    - Assets/Orb 2/Scripts 2
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 45
   m_LastFolders:
-  - Assets/Orb 2/Prefabs/Attack bits
+  - Assets/Orb 2/Scripts 2
   m_LastFoldersGridSize: 45
-  m_LastProjectPath: C:\Users\tomgr\Unity stuffs\Game Tools Project
+  m_LastProjectPath: C:\Users\tomgr\Dark-Arts\Game Tools Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 925d0000
-    m_LastClickedID: 23954
-    m_ExpandedIDs: 000000005e5d0000605d00008e5d0000
+    m_SelectedIDs: 945d0000
+    m_LastClickedID: 23956
+    m_ExpandedIDs: 00000000625d0000645d0000925d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,7 +620,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e5d0000605d0000
+    m_ExpandedIDs: 00000000625d0000645d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -712,9 +712,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.867775, y: 4.3581123, z: -10.486372}
+    m_Target: {x: 17.587297, y: 2.6486626, z: 2.1665163}
     speed: 2
-    m_Value: {x: 5.867775, y: 4.3581123, z: -10.486372}
+    m_Value: {x: 17.587297, y: 2.6486626, z: 2.1665163}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -761,13 +761,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.43153042, y: -0.07785757, z: 0.033429913, w: -0.89880747}
+    m_Target: {x: -0.44617376, y: 0.013911996, z: -0.010874912, w: -0.89547193}
     speed: 2
-    m_Value: {x: -0.4312604, y: -0.07780886, z: 0.033408996, w: -0.8982451}
+    m_Value: {x: -0.44589454, y: 0.01390329, z: -0.010868106, w: -0.8949115}
   m_Size:
-    m_Target: 15.109152
+    m_Target: 9.985638
     speed: 2
-    m_Value: 15.109152
+    m_Value: 9.985638
   m_Ortho:
     m_Target: 0
     speed: 2

@@ -164,10 +164,10 @@ namespace Orb_2.Scripts_2
             {
                 reload = 300; // timer until spell can be cast again
                 
-                for (int I = 0; I <= combos.Length; I++)
-                {
-                 if(spellStack == combos[I]){doFunkySpell();}
-                }
+        //        for (int I = 0; I <= combos.Length; I++)
+        //        {
+        //         if(spellStack == combos[I]){doFunkySpell();}
+        //        }
                 { generateSpell(); }
             }
         }

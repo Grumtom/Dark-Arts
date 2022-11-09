@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class Attack : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class Attack : MonoBehaviour
     public bool projectile;
     public string element;
     public bool continuous;
-    public bool lazer;
+    public bool spin;
+   // public bool lazer;
     
     public float damageTick;
     public float life;
@@ -23,8 +25,9 @@ public class Attack : MonoBehaviour
             life--;
             if(life<=0){Destroy(gameObject);}
         }
-
-        if (lazer) {LazerLength();}
+        Random rnd = new Random();
+        if(spin){gameObject.transform.Rotate(rnd.Next(-10,10),rnd.Next(-10,10),rnd.Next(-10,10));}
+    //    if (lazer) {LazerLength();}
     }
 
     void LazerLength()

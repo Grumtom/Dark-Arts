@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1362355614843000137, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362355614843000137, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362355614843000137, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1602043715238068406, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -69,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7351059386842958158, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}
       propertyPath: m_Name
-      value: SprayD
+      value: SprayW Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7abb07359239b6940b58425bd08f8ae2, type: 3}

@@ -10,6 +10,6 @@ public class Camcontroller : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-        transform.position = player.transform.position + new Vector3(0, camHeight, camDist);
+        transform.position = player.transform.position + new Vector3(0, camHeight, camDist); // holds the camera in one position
     }
 }

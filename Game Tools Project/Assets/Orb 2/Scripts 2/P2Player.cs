@@ -10,7 +10,7 @@ namespace Orb_2.Scripts_2
 {
     public class P2Player : MonoBehaviour
     {
-        private String[] combos = {"wa" ,"dw"};
+        private String[] combos = {"dw"};
 
         [Header("--Dont Change--")]
         public NavMeshAgent agent;
@@ -27,12 +27,19 @@ namespace Orb_2.Scripts_2
         public string spellStack;
         public int stackSize;
         public int stackMax;
-        public bool isFiring;
-        public float firetimer;
-        public float reload = 0;
-        public float reloadTime;
+        public bool isFiring; 
+        private float firetimer;
+        private float reload = 0;
+        private float reloadTime;
         public bool funkySpell = false;
-
+        private bool airshoot;
+        public int airshootTimer = 0;
+        public int airshootShots = 0;
+        public int airshootCount = 3;
+        public int airshootDelay;
+        private string airStack;
+        public GameObject manaLight;
+        
         // w = earth, a = air, s = fire, d = lazer
         [Header("sprays")]
         [Header("--Gen-Attacks--")]
@@ -69,9 +76,9 @@ namespace Orb_2.Scripts_2
             Inputs();
             SpellChoose();
             SpellCast();
-            if(Input.GetKeyDown("e")){damage(10);} // this bitch is temporary
+            if (airshoot)airAttack();
+          //  if(Input.GetKeyDown("e")){damage(10);} // this bitch is temporary
         }
-
         void Move()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // raycasts to get the mouse pos in game
@@ -113,6 +120,8 @@ namespace Orb_2.Scripts_2
             {
                 if (spellStack == combos[I]) funkySpell = true;
             }
+            
+            if(funkySpell){manaLight.SetActive(true);}else{manaLight.SetActive(false);}
             
             manaSpinner.transform.rotation = Quaternion.Euler(0,0,0); // holds the mana slot spinner in place
             for (int I = 0; I < 4; I++)
@@ -181,7 +190,7 @@ namespace Orb_2.Scripts_2
         }
         void doFunkySpell()
         {
-            if (spellStack == "wa")
+            if (spellStack == "dw")
             {
                 damage(-30);
             }
@@ -231,78 +240,10 @@ namespace Orb_2.Scripts_2
 
                         break;
                     case 'a': // air attacks
-                        for (int I = 0; I < stackSize; I++)
-                        {
-                            if (spellStack[I] == 'w')
-                            {
-                                GameObject projectile = Instantiate(AirW,
-                                    transform.position + new Vector3(0, 1, 0),
-                                    transform.rotation); // spawns the rock projectiles
-                                projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 4000f));
-                                
-                                GameObject projectile2 = Instantiate(AirW,
-                                    transform.position + new Vector3(0, 1, 0),
-                                    transform.rotation); // spawns the rock projectiles
-                                projectile2.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 6000f));
-                                
-                                GameObject projectile3 = Instantiate(AirW,
-                                    transform.position + new Vector3(0, 1, 0),
-                                    transform.rotation); // spawns the rock projectiles
-                                projectile3.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 5000f));
-                            }
-
-                            if (spellStack[I] == 'a')
-                            {
-                                GameObject projectile = Instantiate(AirA,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 4000f));
-                                GameObject projectile2 = Instantiate(AirA,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile2.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 6000f));
-                                GameObject projectile3 = Instantiate(AirA,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile3.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 5000f));
-                            }
-
-                            if (spellStack[I] == 's')
-                            {
-                                GameObject projectile = Instantiate(AirS,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 4000f));
-                                GameObject projectile2 = Instantiate(AirS,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile2.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 6000f));
-                                GameObject projectile3 = Instantiate(AirS,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile3.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 5000f));
-                            }
-
-                            if (spellStack[I] == 'd')
-                            {
-                                GameObject projectile = Instantiate(AirD,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 4000f));
-                                GameObject projectile2 = Instantiate(AirD,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile2.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 6000f));
-                                GameObject projectile3 = Instantiate(AirD,
-                                    transform.position + new Vector3(0, 1, 0), transform.rotation);
-                                projectile3.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
-                                    (0, 0, 5000f));
-                            }
-                        }
-
+                        airshoot = true;
+                        airStack = spellStack;
+                        airshootShots = airshootCount;
+                        airshootTimer = 1; // sets the timer to 1 so that it ticks down to zero, fires, then resets
                         break;
                     case 's': // fire attacks
                         for (int I = 0; I < stackSize; I++)
@@ -342,28 +283,24 @@ namespace Orb_2.Scripts_2
                             {
                                 GameObject Water = Instantiate(WaterW, transform.position + new Vector3(0, 1, 0),
                                     transform.rotation);
-                                Water.transform.SetParent(gameObject.transform);
                             }
 
                             if (spellStack[I] == 'a')
                             {
                                 GameObject Water = Instantiate(WaterA, transform.position + new Vector3(0, 1, 0),
                                     transform.rotation);
-                                Water.transform.SetParent(gameObject.transform);
                             }
 
                             if (spellStack[I] == 's')
                             {
                                 GameObject Water = Instantiate(WaterS, transform.position + new Vector3(0, 1, 0),
                                     transform.rotation);
-                                Water.transform.SetParent(gameObject.transform);
                             }
 
                             if (spellStack[I] == 'd')
                             {
                                 GameObject Water = Instantiate(WaterD, transform.position + new Vector3(0, 1, 0),
                                     transform.rotation);
-                                Water.transform.SetParent(gameObject.transform);
                             }
                         }
 
@@ -373,7 +310,58 @@ namespace Orb_2.Scripts_2
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.tag == "Enemy") damage(5);
+            if (other.gameObject.tag == "Enemy") damage(5); // takes 5 damage when hitting an enemy
+        }
+        void airAttack()
+        {
+            airshootTimer--;
+            if (airshootTimer == 0)
+            {
+                if (airshootShots > 0) // if there is enough ammo, and the timer goes then shoot
+                {
+                    airshootTimer = airshootDelay;
+                    airshootShots--;
+                    for (int I = 0; I < airStack.Length; I++)
+                    {
+                        if (airStack[I] == 'w')
+                        {
+                            GameObject projectile = Instantiate(AirW,
+                                transform.position + new Vector3(0, 1, 0),
+                                transform.rotation); // spawns the rock projectiles
+                            projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
+                                (0, 0, 2000f));
+                        }
+
+                        if (airStack[I] == 'a')
+                        {
+                            GameObject projectile = Instantiate(AirA,
+                                transform.position + new Vector3(0, 1, 0), transform.rotation);
+                            projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
+                                (0, 0, 2000f));
+                        }
+
+                        if (airStack[I] == 's')
+                        {
+                            GameObject projectile = Instantiate(AirS,
+                                transform.position + new Vector3(0, 1, 0), transform.rotation);
+                            projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
+                                (0, 0, 2000f));
+                        }
+
+                        if (airStack[I] == 'd')
+                        {
+                            GameObject projectile = Instantiate(AirD,
+                                transform.position + new Vector3(0, 1, 0), transform.rotation);
+                            projectile.GetComponent<Rigidbody>().AddRelativeForce(new Vector3
+                                (0, 0, 2000f));
+                        }
+                    }
+                }
+                else
+                {
+                    airshoot = false;
+                }
+            }
         }
     }
     

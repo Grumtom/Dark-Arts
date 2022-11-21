@@ -8,9 +8,9 @@ public class Mana : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d") ||
-            Input.GetKeyDown("r") || Input.GetMouseButtonDown(1))
+            Input.GetKeyDown("r") || Input.GetMouseButtonDown(1)) 
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // destroys the mana with input
         }
     }
 }

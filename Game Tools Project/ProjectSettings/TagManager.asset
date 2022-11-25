@@ -9,6 +9,7 @@ TagManager:
   - fire
   - playerAttack
   - Enemy
+  - EnemyBaseAttack
   layers:
   - Default
   - TransparentFX

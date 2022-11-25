@@ -5,7 +5,12 @@ ScriptsOnlyBuild:
     - Camcontroller
     - EnemyScript
     - Mana
+    - Menu
     - Orb_2.Scripts_2.P2Player
+    - SceneLoader
+    - TimePause
+    - WaterDelete
+    - healthbar
     Unity.ProBuilder.Editor.dll:
     - UnityEditor.ProBuilder.EditorToolbar
     - UnityEditor.ProBuilder.ProBuilderEditor
@@ -27,11 +32,165 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Orb 2/Orb 2.unity:
+    Assets/Dark Arts/Level 1.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1544}
+    - Class: 114
+      Script: {instanceID: 1752}
+    - Class: 114
+      Script: {instanceID: 1956}
+    - Class: 114
+      Script: {instanceID: 2100}
+    - Class: 114
+      Script: {instanceID: 2164}
+    - Class: 114
+      Script: {instanceID: 2470}
+    - Class: 114
+      Script: {instanceID: 2516}
+    - Class: 114
+      Script: {instanceID: 2576}
+    - Class: 114
+      Script: {instanceID: 2650}
+    - Class: 114
+      Script: {instanceID: 2702}
+    - Class: 114
+      Script: {instanceID: 2786}
+    - Class: 114
+      Script: {instanceID: 2862}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 3198}
+    - Class: 114
+      Script: {instanceID: 3204}
+    - Class: 114
+      Script: {instanceID: 3714}
+    - Class: 114
+      Script: {instanceID: 4170}
+    - Class: 114
+      Script: {instanceID: 5132}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 195
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 238
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Dark Arts/Main Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1544}
+    - Class: 114
+      Script: {instanceID: 2164}
+    - Class: 114
+      Script: {instanceID: 2516}
+    - Class: 114
+      Script: {instanceID: 2650}
+    - Class: 114
+      Script: {instanceID: 2786}
+    - Class: 114
+      Script: {instanceID: 2862}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 3198}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Dark Arts/Practice Arena.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -56,6 +215,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 96
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -65,24 +230,40 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1752}
     - Class: 114
-      Script: {instanceID: 2092}
+      Script: {instanceID: 1956}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2624}
+      Script: {instanceID: 2164}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2470}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2516}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 2576}
     - Class: 114
-      Script: {instanceID: 3664}
+      Script: {instanceID: 2650}
     - Class: 114
-      Script: {instanceID: 4118}
+      Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 5058}
+      Script: {instanceID: 2786}
+    - Class: 114
+      Script: {instanceID: 2862}
+    - Class: 114
+      Script: {instanceID: 3086}
+    - Class: 114
+      Script: {instanceID: 3198}
+    - Class: 114
+      Script: {instanceID: 3204}
+    - Class: 114
+      Script: {instanceID: 3714}
+    - Class: 114
+      Script: {instanceID: 4170}
+    - Class: 114
+      Script: {instanceID: 5132}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -103,8 +284,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 238
-      Script: {instanceID: 0}
-    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -175,7 +354,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: be411fe1409495208bdc0b808ed6e20a
+      Hash: 7b3eb367234bf860389b0c1e507b057b
     assemblyName: Assembly-CSharp.dll
     namespaceName: Orb_2.Scripts_2
     className: P2Player
@@ -193,7 +372,13 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 2b05d6d5ad3e371ea84cd0d6f733d7d5
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WaterDelete
+  - hash:
+      serializedVersion: 2
+      Hash: 5b9651adead0d1881fff232f6b49a182
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Attack
@@ -229,10 +414,22 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimePause
+  - hash:
+      serializedVersion: 2
       Hash: a1aa98c78061c6f03a8c124cda576e67
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: eb37a74ff3950b00408e18cd39e3647a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: healthbar
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -275,6 +472,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Camcontroller
+  - hash:
+      serializedVersion: 2
+      Hash: cc30ad23cf837f8fd23f642f30d371c5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneLoader
   - hash:
       serializedVersion: 2
       Hash: d6a8e9bec3160a152b9b2710593d3caa
@@ -373,6 +576,12 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 7cb858fdb575d85c2b73635a3476062b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -439,7 +648,7 @@ ScriptsOnlyBuild:
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
-      Hash: cc237e89a939a8832c30a92b8246affc
+      Hash: 9cd992f77beacebfc72eb8f52aa60b60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyScript
@@ -619,5 +828,8 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   platform: 19
   scenePathNames:
-  - Assets/Orb 2/Orb 2.unity
-  playerPath: C:/Users/tomgr/Dark-Arts/Game Tools Project/Builds/Game Tools Project.exe
+  - Assets/Dark Arts/Main Menu.unity
+  - Assets/Dark Arts/Level 1.unity
+  - Assets/Dark Arts/Practice Arena.unity
+  playerPath: C:/Users/tomgr/Dark-Arts/Game Tools Project/Builds/Dark-Arts Build/Game
+    Tools Project.exe

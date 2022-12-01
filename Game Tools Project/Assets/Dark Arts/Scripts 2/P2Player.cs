@@ -45,6 +45,7 @@ namespace Orb_2.Scripts_2
         public float speedBoostTimer;
         public float speedBoostAmount = 4;
         public GameObject blizzard;
+        public Text spellText;
 
         [Header("Manafloaters")] 
         public Image[] wmana;
@@ -142,8 +143,20 @@ namespace Orb_2.Scripts_2
             {
                 if (spellStack == combos[I]) funkySpell = true;
             }
-            
-            if(funkySpell){manaLight.SetActive(true);}else{manaLight.SetActive(false);}
+
+            if (funkySpell)
+            {
+                manaLight.SetActive(true);
+                spellText.gameObject.SetActive(true);
+                if (spellStack == "dw") { spellText.text = "Heal"; }
+                if (spellStack == "sa") { spellText.text = "Speed Boost"; }
+                if (spellStack == "adw") { spellText.text = "Blizzard"; }
+            }
+            else
+            {
+                manaLight.SetActive(false);
+                spellText.gameObject.SetActive(false);
+            }
             
             //future mana spinner
             /*

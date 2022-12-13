@@ -28,32 +28,43 @@ namespace Orb_2.Scripts_2
         public string spellStack;
         public int stackSize;
         public int stackMax;
+        
         public bool isFiring; 
         private float firetimer;
         private float reload = 0;
-        private float reloadTime;
+        public float reloadTime;
         public bool funkySpell = false;
+        
         private bool airshoot;
         public int airshootTimer = 0;
         public int airshootShots = 0;
         public int airshootCount = 3;
         public int airshootDelay;
         private string airStack;
+        
         public GameObject manaLight;
+        public float manaPosRotation = 0;
+        public float manaRotateSpeed = 0.1f;
+        
         public bool speedBoosted = false;
         public float speedBoostTime;
         public float speedBoostTimer;
         public float speedBoostAmount = 4;
+        
         public GameObject blizzard;
         public Text spellText;
 
         [Header("Manafloaters")] 
-        public Image[] wmana;
-        public Image[] amana;
-        public Image[] smana;
-        public Image[] dmana;
+        public Image[] manaSlot;
+        public Image[] wMana;
+        public Image[] aMana;
+        public Image[] sMana;
+        public Image[] dMana;
+        
+        [Header("ManaUI")]
+        public Image[] ManaUI;
 
-        // w = earth, a = air, s = fire, d = lazer
+        // w = earth, a = air, s = fire, d = water
         [Header("sprays")]
         [Header("--Gen-Attacks--")]
         public GameObject sprayW;
@@ -79,10 +90,14 @@ namespace Orb_2.Scripts_2
         public GameObject AirS;
         public GameObject AirD;
     
-        // w = earth, a = air, s = fire, d = lazer
-    
+        // w = earth, a = air, s = fire, d = water
 
-        // Update is called once per frame
+
+        private void Awake()
+        {
+            active = true;
+            Time.timeScale = 1;
+        }
 
         void Update()
         {
@@ -159,45 +174,95 @@ namespace Orb_2.Scripts_2
             }
             
             //future mana spinner
-            /*
+
+            manaPosRotation += manaRotateSpeed;
             manaSpinner.transform.rotation = Quaternion.Euler(0,0,0); 
-            manaSpinner.transform.Rotate(0,1,0);
+            manaSpinner.transform.Rotate(0,manaPosRotation,0); // spins the mana
+
+            switch (stackSize)
+            {
+                case 0 :
+                    manaSlot[0].gameObject.SetActive(false);
+                    manaSlot[1].gameObject.SetActive(false);
+                    manaSlot[2].gameObject.SetActive(false); 
+                    
+                    ManaUI[0].gameObject.SetActive(false);
+                    ManaUI[1].gameObject.SetActive(false);
+                    ManaUI[2].gameObject.SetActive(false);
+                    ManaUI[3].gameObject.SetActive(false);
+
+                    for (int I = 0; I < 3; I++)
+                    {
+                        wMana[I].gameObject.SetActive(false);
+                        aMana[I].gameObject.SetActive(false);
+                        sMana[I].gameObject.SetActive(false);
+                        dMana[I].gameObject.SetActive(false); // sets the mana images off when there is no mana
+                    }
+                    break;
+                case 1 :
+                    manaSlot[0].gameObject.SetActive(true);
+                    manaSlot[1].gameObject.SetActive(false);
+                    manaSlot[2].gameObject.SetActive(false);
+                    break;
+                case 2 :
+                    manaSlot[0].gameObject.SetActive(false);
+                    manaSlot[1].gameObject.SetActive(true);
+                    manaSlot[2].gameObject.SetActive(false);
+                    break;
+                case 3 :
+                    manaSlot[0].gameObject.SetActive(false);
+                    manaSlot[1].gameObject.SetActive(false);
+                    manaSlot[2].gameObject.SetActive(true);
+                    break;
+            }
+            
             for (int I = 0; I < stackSize; I++)
             {
                 if (spellStack[I] == 'w')
                 {
-                    wMana[I].SetActive(true);
+                    wMana[I].gameObject.SetActive(true);
+                    ManaUI[0].gameObject.SetActive(true);
                 }
                 else
                 {
-                    wMana[I].SetActive(false);
-                }
-                                if (spellStack[I] == 'w')
+                    wMana[I].gameObject.SetActive(false);
+                } 
+                
+                
+                if (spellStack[I] == 'a')
                 {
-                    aMana[I].SetActive(true);
+                    aMana[I].gameObject.SetActive(true);
+                    ManaUI[1].gameObject.SetActive(true);
                 }
                 else
                 {
-                    aMana[I].SetActive(false);
+                    aMana[I].gameObject.SetActive(false); // sets the mana image on or off depending on
                 }
-                                if (spellStack[I] == 'w')
+                
+                
+                if (spellStack[I] == 's')
                 {
-                    sMana[I].SetActive(true);
+                    sMana[I].gameObject.SetActive(true);
+                    ManaUI[2].gameObject.SetActive(true);
                 }
                 else
                 {
-                    sMana[I].SetActive(false);
+                    sMana[I].gameObject.SetActive(false);
                 }
-                                if (spellStack[I] == 'w')
+                
+                
+                if (spellStack[I] == 'd')
                 {
-                    dMana[I].SetActive(true);
+                    dMana[I].gameObject.SetActive(true);
+                    ManaUI[3].gameObject.SetActive(true);
                 }
                 else
                 {
-                    dMana[I].SetActive(false);
+                    dMana[I].gameObject.SetActive(false);
                 }
-            }*/
+            }
             
+            /*
             manaSpinner.transform.rotation = Quaternion.Euler(0,0,0); // holds the mana slot spinner in place
             for (int I = 0; I < 4; I++)
             {
@@ -241,7 +306,10 @@ namespace Orb_2.Scripts_2
                     }
                 }
             }
+            */
         }
+        
+            
         void SpellCast()
         {
             reload--; // ticks down the reload and fire timers

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Dark Arts/Main Menu.unity
+- path: Assets/Dark Arts/Level 1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

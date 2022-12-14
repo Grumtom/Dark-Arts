@@ -175,7 +175,7 @@ namespace Orb_2.Scripts_2
             
             //future mana spinner
 
-            manaPosRotation += manaRotateSpeed;
+            manaPosRotation += manaRotateSpeed * Time.deltaTime;
             manaSpinner.transform.rotation = Quaternion.Euler(0,0,0); 
             manaSpinner.transform.Rotate(0,manaPosRotation,0); // spins the mana
 
@@ -308,12 +308,10 @@ namespace Orb_2.Scripts_2
             }
             */
         }
-        
-            
         void SpellCast()
         {
-            reload--; // ticks down the reload and fire timers
-            firetimer--;
+            reload-= 1* Time.deltaTime; // ticks down the reload and fire timers
+            firetimer-=1 * Time.deltaTime;
         
             if (firetimer < 1)isFiring = false; // if any active fire timer goes below zero then firing is set to false}
         

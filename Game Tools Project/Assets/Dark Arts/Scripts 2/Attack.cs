@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
         Random rnd = new Random();
         if (hasLife)
         {
-            life-= 1 * Time.deltaTime;
+            life-= 1 + 1* Time.deltaTime;
             if(life<=0){Destroy(gameObject);}
         } // lifespan tickdown
         if(rock){gameObject.transform.Rotate(rnd.Next(-10,10),rnd.Next(-10,10),rnd.Next(-10,10));} // rock's shaky spin

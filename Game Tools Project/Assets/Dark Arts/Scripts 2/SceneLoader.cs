@@ -42,7 +42,8 @@ public class SceneLoader : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && winbox)
         {
-            if (sceneName == "tutorial")
+            print("Win");
+            if (sceneName == "Tutorial")
             {
                 SceneManager.LoadScene("Level 1");
             }

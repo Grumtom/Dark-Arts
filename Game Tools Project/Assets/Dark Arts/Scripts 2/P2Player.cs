@@ -31,7 +31,7 @@ namespace Orb_2.Scripts_2
         
         public bool isFiring; 
         private float firetimer;
-        private float reload = 0;
+        public float reload = 0;
         public float reloadTime;
         public bool funkySpell = false;
         
@@ -175,7 +175,7 @@ namespace Orb_2.Scripts_2
             
             //future mana spinner
 
-            manaPosRotation += manaRotateSpeed * Time.deltaTime;
+            manaPosRotation += manaRotateSpeed + 1* Time.deltaTime;
             manaSpinner.transform.rotation = Quaternion.Euler(0,0,0); 
             manaSpinner.transform.Rotate(0,manaPosRotation,0); // spins the mana
 
@@ -310,8 +310,8 @@ namespace Orb_2.Scripts_2
         }
         void SpellCast()
         {
-            reload-= 1* Time.deltaTime; // ticks down the reload and fire timers
-            firetimer-=1 * Time.deltaTime;
+            reload-= 1 + 1* Time.deltaTime; // ticks down the reload and fire timers
+            firetimer-=1 - 1 * Time.deltaTime;
         
             if (firetimer < 1)isFiring = false; // if any active fire timer goes below zero then firing is set to false}
         

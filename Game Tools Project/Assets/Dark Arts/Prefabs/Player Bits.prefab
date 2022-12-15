@@ -9081,7 +9081,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 4.5
   m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 10000
@@ -9126,6 +9126,7 @@ MonoBehaviour:
   stackSize: 0
   stackMax: 3
   isFiring: 0
+  reload: 0
   reloadTime: 100
   funkySpell: 0
   airshootTimer: 0

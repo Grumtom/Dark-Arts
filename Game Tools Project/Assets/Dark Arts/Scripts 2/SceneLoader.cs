@@ -24,18 +24,33 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-    
+
     public void Pracitce()
     {
         SceneManager.LoadScene("Practice Arena");
     }
 
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("tutorial");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
         if (other.gameObject.tag == "Player" && winbox)
         {
-       
-            SceneManager.LoadScene("Main Menu");
+            if (sceneName == "tutorial")
+            {
+                SceneManager.LoadScene("Level 1");
+            }
+            else if (sceneName == "Level 1")
+            {
+                SceneManager.LoadScene("Main Menu");
+            }
+
         }
     }
     

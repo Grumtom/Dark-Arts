@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Dark Arts/Practice Arena.unity
     guid: 18e9c6435e3de104f82188e48a5069b2
+  - enabled: 1
+    path: Assets/Dark Arts/Tutorial.unity
+    guid: accbd9863340f124eace40178ebef0f0
   m_configObjects: {}
